@@ -1,8 +1,7 @@
-## Business Case (PDF)
-
-The full business case document is available at this link: 📄 [View Document](https://drive.google.com/file/d/10Q8O5a6zyl39QyHVwtGPIxPmHH7fwPuP/view?usp=sharing)
-
-**The Business Problem: Inside Sales Workflow**
+## Business Case
+The full business case (PDF) is available at this link: 📄 [View Document](https://drive.google.com/file/d/1h1YoUybtufHFk6Xmqd6rl3YDCghNWd4M/view?usp=sharing) 
+##
+**A Sales Workflow Bottleneck That Delays Your Campaigns**
 
 You're an inside sales rep working in the United States or Canada.
 It's Monday morning. Your manager has just assigned you a CSV file containing 1,000 fresh leads from across the US and Canada (probably pulled from a B2B database) and asks you to call all of them by the end of the week. That's not a problem for you.
@@ -118,6 +117,42 @@ Lead Router operates as a read-only ingestion layer over your source data. It us
 The RAW_INPUT worksheet remains untouched throughout processing, while all routed records are written to separate output worksheets.
 This design ensures the original dataset is always preserved, allowing users to safely reprocess, audit, or reuse the data at any time without risk of modification or loss.
 
+**Duplicate Phone Numbers**
+
+Lead Router does not identify, remove, or handle duplicate phone numbers. This is an intentional
+design decision.
+
+In real-world lead lists, duplicate numbers are often valid- for example, multiple contacts may
+share a company’s headquarters line, or employees may share a main business number with
+different extensions.
+
+Because duplicates can represent legitimate records, Lead Router avoids making assumptions
+that could remove valid leads. Instead, it focuses on cleaning, normalizing, validating, and
+routing phone numbers into the correct output buckets.
+
+Numbers are normalized into a consistent format, making duplicates easy to identify through
+sorting or filtering in the output sheets. Users can handle duplicate management separately using
+spreadsheet tools or a dedicated Apps Script if needed.
+
+**Easy Customization**
+
+Lead Router uses a simple, transparent, rule-based architecture. Area code mappings and routing
+rules are stored directly within the script, making them easy to review and modify. Even users
+with limited coding experience can update the routing logic when needed. For example, if a new
+toll-free prefix is introduced, it can be added by editing the appropriate list within the script,
+saving the changes, and re-authorizing the script in Google Sheets.
+
+Because the routing rules are clearly defined and hard-coded, organizations can easily customize
+the tool to accommodate new area codes, updated numbering plans, or company-specific
+requirements without having to redesign the entire application.
+
+**Extensibility & Future Use Cases**
+
+Lead Router is built on a simple, flexible Google Apps Script architecture that can be extended
+using low-code or AI-assisted development.
+
+It can be adapted for additional workflows, such as global phone number classification by
+country code, time-zone-based grouping, and more.
 
 **It's a Free Tool**
 
