@@ -1,3 +1,6 @@
+[![GitHub release](https://img.shields.io/github/v/release/imtiaz-bi/Lead-Router)](https://github.com/imtiaz-bi/Lead-Router/releases)
+[![License](https://img.shields.io/github/license/imtiaz-bi/Lead-Router)](https://github.com/imtiaz-bi/Lead-Router/blob/main/LICENSE)
+
 # 📞 Lead Router
 
 A Google Apps Script-based ETL system that transforms raw lead spreadsheets into **timezone-segmented, call-ready datasets using phone number area codes**.
